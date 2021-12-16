@@ -18,6 +18,7 @@ def batalha (Jogador):
         desc_saude = Jogador.getForca-defesa_inimigo
         if desc_saude < 0:
             desc_saude*(-1)
+        Jogador.setSaude(desc_saude)
 
         Jogador.setSaude()
         return print(f"Voce matou o inimigo, a forca do inimigo era {forca_inimigo} e a sua forca era {Jogador.forca}")
@@ -30,7 +31,7 @@ def batalha (Jogador):
         return print("Voces empataram!!!")
 
 
-while Jogador.vida >= 0:
+while Jogador.getVida > 0 and Jogador.getSaude > 0:
     campo = choice_campo()
 
     if Jogador.vida == 0:

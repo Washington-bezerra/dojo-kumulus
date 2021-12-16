@@ -47,10 +47,13 @@ class jogador:
         if self.defesa >= 1000:
             return "Limite maximo atingigo"
         else:
-            self.defesa = self.defesa + defesa
+            pass
 
     def setSaude(self, saude):
         if self.defesa >= 1000:
             return "Limite maximo atingigo"
         else:
             self.saude = self.saude - saude
+            if getSaude <= 0:
+                print("Sua saúde acabou, você morreu!")
+                return False
