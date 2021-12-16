@@ -18,7 +18,7 @@ def batalha (Jogador):
 
         desc_saude = Jogador.getForca()-defesa_inimigo
         if desc_saude < 0:
-            desc_saude*(-1)
+            desc_saude = desc_saude*(-1)
         Jogador.setSaude(desc_saude)
 
         print(f"Voce matou o inimigo, a forca do inimigo era {forca_inimigo} e a sua forca era {Jogador.forca}")
@@ -29,9 +29,10 @@ def batalha (Jogador):
         Jogador.vida = Jogador.vida - 1
         desc_saude = Jogador.getForca() - defesa_inimigo
         if desc_saude < 0:
-            desc_saude * (-1)
+            desc_saude = desc_saude * (-1)
         Jogador.setSaude(desc_saude)
 
+        print(f'>>>>>>{desc_saude}')
         print(f"Voce perdeu a batalha e uma vida, a forca do inimigo era {forca_inimigo} e a sua forca era {Jogador.forca}\nTotal de vidas {Jogador.vida}")
         print(f"Vida: {Jogador.getVida()}\nForça: {Jogador.getForca()}\nDefesa: {Jogador.getDefesa()}\nSaúde: {Jogador.getSaude()}")
 
