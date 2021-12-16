@@ -35,7 +35,8 @@ while Jogador.vida >= 0:
 
         if escolha_equipamento == "forca":
             qtde_forca = choice([100,200,300])
-            Jogador.forca = Jogador.forca + qtde_forca
+            Jogador.setVida(qtde_forca)
+            #Jogador.forca = Jogador.forca + qtde_forca
             print(f'Voce ganhou {qtde_forca} de forca, total: {Jogador.forca}')
 
         if escolha_equipamento == "defesa":
