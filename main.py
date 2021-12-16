@@ -16,13 +16,13 @@ def batalha (Jogador):
 
     if Jogador.forca > forca_inimigo:
 
-        desc_saude = Jogador.getForca-defesa_inimigo
+        desc_saude = Jogador.getForca()-defesa_inimigo
         if desc_saude < 0:
             desc_saude*(-1)
         Jogador.setSaude(desc_saude)
-        Jogador.setSaude()
 
-        return print(f"Voce matou o inimigo, a forca do inimigo era {forca_inimigo} e a sua forca era {Jogador.forca}")
+        print(f"Voce matou o inimigo, a forca do inimigo era {forca_inimigo} e a sua forca era {Jogador.forca}")
+        print(f"Vida: {Jogador.getVida()}\nForça: {Jogador.getForca()}\nDefesa: {Jogador.getDefesa()}\nSaúde: {Jogador.getSaude()}")
 
     elif Jogador.forca < forca_inimigo:
 
@@ -32,11 +32,12 @@ def batalha (Jogador):
             desc_saude * (-1)
         Jogador.setSaude(desc_saude)
 
-        return print(f"Voce perdeu a batalha e uma vida, a forca do inimigo era {forca_inimigo} e a sua forca era {Jogador.forca}\nTotal de vidas {Jogador.vida}")
+        print(f"Voce perdeu a batalha e uma vida, a forca do inimigo era {forca_inimigo} e a sua forca era {Jogador.forca}\nTotal de vidas {Jogador.vida}")
+        print(f"Vida: {Jogador.getVida()}\nForça: {Jogador.getForca()}\nDefesa: {Jogador.getDefesa()}\nSaúde: {Jogador.getSaude()}")
 
     elif Jogador.forca == forca_inimigo:
-        return print("Voces empataram!!!")
-
+        print("Voces empataram!!!")
+        print(f"Vida: {Jogador.getVida()}\nForça: {Jogador.getForca()}\nDefesa: {Jogador.getDefesa()}\nSaúde: {Jogador.getSaude()}")
 
 while Jogador.getVida() > 0 and Jogador.getSaude() > 0:
     campo = choice_campo()
@@ -58,7 +59,8 @@ while Jogador.getVida() > 0 and Jogador.getSaude() > 0:
         if escolha_equipamento == "defesa":
 
             qtde_defesa = choice([100,200,300])
-            Jogador.defesa = Jogador.defesa + qtde_defesa
+            #Jogador.defesa = Jogador.defesa + qtde_defesa
+            Jogador.setDefesa(qtde_defesa)
             print(f'Voce ganhou {qtde_defesa} de defesa, total: {Jogador.defesa}')
 
         batalha(Jogador)
