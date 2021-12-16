@@ -7,11 +7,19 @@ def choice_campo ():
 nome = input("Informe o nome do guerreiro: ")
 
 
-Jogador = jogador(nome, 5, 500, choice([100,200,300,400,500,600,700,800,900,1000]))
+Jogador = jogador(nome, 3, 500, choice([100,200,300,400,500,600,700,800,900,1000]))
 
 def batalha (Jogador):
     forca_inimigo = choice([100, 200, 300, 400, 500, 600, 700, 800, 900, 1000])
+    defesa_inimigo = choice([100, 200, 300, 400, 500, 600, 700, 800, 900, 1000])
+
+
     if Jogador.forca > forca_inimigo:
+        desc_saude = Jogador.getForca-defesa_inimigo
+        if desc_saude < 0:
+            desc_saude*(-1)
+
+        Jogador.setSaude()
         return print(f"Voce matou o inimigo, a forca do inimigo era {forca_inimigo} e a sua forca era {Jogador.forca}")
 
     elif Jogador.forca < forca_inimigo:

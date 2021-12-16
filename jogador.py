@@ -30,12 +30,12 @@ class jogador:
 
     def setVida(self, vida):
 
-        if self.vida >= 10:
+        if self.vida >= 3:
             return print("Limite maximo de vida atingido")
         else:
             self.vida = self.vida + vida
-            if self.vida > 10:
-                self.vida = 10
+            if self.vida > 3:
+                self.vida = 3
 
     def setForca(self, forca):
         if self.forca >= 1000:
@@ -53,4 +53,4 @@ class jogador:
         if self.defesa >= 1000:
             return "Limite maximo atingigo"
         else:
-            self.defesa = self.defesa + defesa
+            self.saude = self.saude - saude
