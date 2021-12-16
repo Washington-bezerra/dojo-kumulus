@@ -9,19 +9,18 @@ class jogador:
 
     #Get
     def getName(self):
-        return self.name
+        return int(self.name)
 
     def getVida(self):
-        return self.vida
+        return int(self.vida)
 
     def getForca(self):
-        return self.forca
+        return int(self.forca)
 
     def getDefesa(self):
-        return self.defesa
-
+        return int(self.defesa)
     def getSaude(self):
-        return self.saude
+        return int(self.saude)
 
 
     #Set
@@ -31,7 +30,7 @@ class jogador:
     def setVida(self, vida):
 
         if self.vida >= 3:
-            return print("Limite maximo de vida atingido")
+            print("Limite maximo de vida atingido")
         else:
             self.vida = self.vida + vida
             if self.vida > 3:
@@ -51,9 +50,9 @@ class jogador:
 
     def setSaude(self, saude):
         if self.defesa >= 1000:
-            return "Limite maximo atingigo"
+            return "Limite maximo de saude atingigo"
         else:
             self.saude = self.saude - saude
-            if getSaude <= 0:
+            if self.getSaude() <= 0:
                 print("Sua saúde acabou, você morreu!")
                 return False

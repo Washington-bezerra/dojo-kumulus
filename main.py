@@ -7,7 +7,7 @@ def choice_campo ():
 nome = input("Informe o nome do guerreiro: ")
 
 
-Jogador = jogador(nome, 3, 500, choice([100,200,300,400,500,600,700,800,900,1000]))
+Jogador = jogador(nome, 3, 500, choice([100,200,300,400,500,600,700,800,900,1000]), 1000)
 
 def batalha (Jogador):
     forca_inimigo = choice([100, 200, 300, 400, 500, 600, 700, 800, 900, 1000])
@@ -15,23 +15,30 @@ def batalha (Jogador):
 
 
     if Jogador.forca > forca_inimigo:
+
         desc_saude = Jogador.getForca-defesa_inimigo
         if desc_saude < 0:
             desc_saude*(-1)
         Jogador.setSaude(desc_saude)
-
         Jogador.setSaude()
+
         return print(f"Voce matou o inimigo, a forca do inimigo era {forca_inimigo} e a sua forca era {Jogador.forca}")
 
     elif Jogador.forca < forca_inimigo:
+
         Jogador.vida = Jogador.vida - 1
+        desc_saude = Jogador.getForca() - defesa_inimigo
+        if desc_saude < 0:
+            desc_saude * (-1)
+        Jogador.setSaude(desc_saude)
+
         return print(f"Voce perdeu a batalha e uma vida, a forca do inimigo era {forca_inimigo} e a sua forca era {Jogador.forca}\nTotal de vidas {Jogador.vida}")
 
     elif Jogador.forca == forca_inimigo:
         return print("Voces empataram!!!")
 
 
-while Jogador.getVida > 0 and Jogador.getSaude > 0:
+while Jogador.getVida() > 0 and Jogador.getSaude() > 0:
     campo = choice_campo()
 
     if Jogador.vida == 0:
@@ -58,7 +65,8 @@ while Jogador.getVida > 0 and Jogador.getSaude > 0:
 
     elif campo == "vida":
             qtde_vida = choice([1,2,3])
-            Jogador.vida = Jogador.vida + qtde_vida
+            #Jogador.vida = Jogador.vida + qtde_vida
+            Jogador.setVida(qtde_vida)
             print(f'Voce ganhou {qtde_vida} vida(s), total: {Jogador.vida}')
 
     print('='*15)
